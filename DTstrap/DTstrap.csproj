@@ -1,0 +1,95 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <ApplicationIcon>DTstrap.ico</ApplicationIcon>
+    <Version>2.11.0</Version>
+    <FileVersion>2.11.0</FileVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+  </PropertyGroup>
+    
+  <ItemGroup>
+    <Resource Include="DTstrap.ico" />
+    <Resource Include="Resources\Fonts\NotoSansThai-VariableFont_wdth,wght.ttf" />
+    <Resource Include="Resources\Fonts\Rubik-VariableFont_wght.ttf" />
+    <Resource Include="Resources\BootstrapperStyles\ByfronDialog\ByfronLogoDark.jpg" />
+    <Resource Include="Resources\BootstrapperStyles\ByfronDialog\ByfronLogoLight.jpg" />
+    <Resource Include="Resources\BootstrapperStyles\ByfronDialog\Matt.png" />
+    <Resource Include="Resources\MessageBox\Error.png" />
+    <Resource Include="Resources\MessageBox\Information.png" />
+    <Resource Include="Resources\MessageBox\Question.png" />
+    <Resource Include="Resources\MessageBox\Warning.png" />
+    <EmbeddedResource Include="UI\Style\Editor-Theme-Dark.xshd" />
+    <EmbeddedResource Include="UI\Style\Editor-Theme-Light.xshd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CustomBootstrapperSchema.json" />
+    <EmbeddedResource Include="Resources\CustomBootstrapperTemplate_Blank.xml" />
+    <EmbeddedResource Include="Resources\CustomBootstrapperTemplate_Simple.xml" />
+    <EmbeddedResource Include="Resources\Icon2008.ico" />
+    <EmbeddedResource Include="Resources\Icon2011.ico" />
+    <EmbeddedResource Include="Resources\Icon2017.ico" />
+    <EmbeddedResource Include="Resources\Icon2019.ico" />
+    <EmbeddedResource Include="Resources\Icon2022.ico" />
+    <EmbeddedResource Include="Resources\IconDTstrap.ico" />
+    <EmbeddedResource Include="Resources\IconDTstrapClassic.ico" />
+    <EmbeddedResource Include="Resources\IconEarly2015.ico" />
+    <EmbeddedResource Include="Resources\IconLate2015.ico" />
+    <EmbeddedResource Include="Resources\Mods\Cursor\From2006\ArrowCursor.png" />
+    <EmbeddedResource Include="Resources\Mods\Cursor\From2006\ArrowFarCursor.png" />
+    <EmbeddedResource Include="Resources\Mods\Cursor\From2013\ArrowCursor.png" />
+    <EmbeddedResource Include="Resources\Mods\Cursor\From2013\ArrowFarCursor.png" />
+    <EmbeddedResource Include="Resources\Mods\Sounds\OldGetUp.mp3" />
+    <EmbeddedResource Include="Resources\Mods\Sounds\OldJump.mp3" />
+    <EmbeddedResource Include="Resources\Mods\Sounds\OldWalk.mp3" />
+    <EmbeddedResource Include="Resources\Mods\Sounds\Empty.mp3" />
+    <EmbeddedResource Include="Resources\Mods\OldAvatarBackground.rbxl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AvalonEdit" Version="6.3.0.90" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="DiscordRichPresence" Version="1.2.1.24" />
+    <PackageReference Include="Markdig" Version="0.40.0" />
+    <PackageReference Include="securifybv.ShellLink" Version="0.1.0" />
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
+    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
+    <PackageReference Include="XamlAnimatedGif" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="DTstrap.Models.Attributes.BuildMetadataAttribute">
+      <_Parameter1>$([System.DateTime]::UtcNow.ToString("s"))Z</_Parameter1>
+      <_Parameter2>$(COMPUTERNAME)\$(USERNAME)</_Parameter2>
+      <_Parameter3>$(CommitHash)</_Parameter3>
+      <_Parameter4>$(CommitRef)</_Parameter4>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
