@@ -160,6 +160,9 @@
   <data name="Bootstrapper.Status.UpgradingDTstrap" xml:space="preserve">
     <value>Getting the latest DTstrap...</value>
   </data>
+  <data name="Bootstrapper.Status.WaitingData" xml:space="preserve">
+    <value>Fetching latest version info...</value>
+  </data>
   <data name="Bootstrapper.Status.WaitingOtherInstances" xml:space="preserve">
     <value>Waiting for other instances...</value>
   </data>

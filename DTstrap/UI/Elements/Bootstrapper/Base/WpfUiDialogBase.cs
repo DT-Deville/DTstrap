@@ -64,8 +64,11 @@ namespace DTstrap.UI.Elements.Bootstrapper.Base
             {
                 _viewModel.TaskbarProgressState = value;
 
-                if (Handle != IntPtr.Zero)
-                    TaskbarProgress.SetProgressState(Handle, value);
+                Dispatcher.Invoke(() =>
+                {
+                    if (Handle != IntPtr.Zero)
+                        TaskbarProgress.SetProgressState(Handle, value);
+                });
 
                 _viewModel.OnPropertyChanged(nameof(_viewModel.TaskbarProgressState));
             }
@@ -78,8 +81,11 @@ namespace DTstrap.UI.Elements.Bootstrapper.Base
             {
                 _viewModel.TaskbarProgressValue = value;
 
-                if (Handle != IntPtr.Zero)
-                    TaskbarProgress.SetProgressValue(Handle, (int)value, App.TaskbarProgressMaximum);
+                Dispatcher.Invoke(() =>
+                {
+                    if (Handle != IntPtr.Zero)
+                        TaskbarProgress.SetProgressValue(Handle, (int)value, App.TaskbarProgressMaximum);
+                });
 
                 _viewModel.OnPropertyChanged(nameof(_viewModel.TaskbarProgressValue));
             }
