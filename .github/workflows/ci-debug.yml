@@ -24,7 +24,7 @@ jobs:
       run: dotnet publish -p:PublishSingleFile=true -p:CommitHash=${{ github.sha }} -p:CommitRef=${{ github.ref_type }}/${{ github.ref_name }} -r win-x64 -c Debug --self-contained false .\DTstrap\DTstrap.csproj
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: DTstrap (Debug) (${{ github.sha }})
         path: .\DTstrap\bin\Debug\net6.0-windows\win-x64\publish\*
